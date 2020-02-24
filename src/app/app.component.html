@@ -1,0 +1,15 @@
+<div class="login-page">
+    <form novalidate>
+    <div *ngFor="let i of arrLogin">
+        <div *ngIf="i.type === 'password' || i.type === 'text'">
+            <label>{{i.name}}</label>
+
+            <input type="{{i.type}}" name="{{i.name}}"  required="{{i.required}}"  [(ngModel)]="i.value">
+            <p class="error" *ngIf="showError">{{i.name}} is required</p>
+        </div>
+        <div *ngIf="i.type === 'submit'">
+            <button type="{{i.type}}" (click)="onSubmit()">{{i.name}}</button>
+        </div>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+[
+    {
+        "type": "text",
+        "name": "username",
+        "value": "",
+        "required": "true"
+
+    },
+    {
+        "type": "password",
+        "name": "password",
+        "value": "",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "name": "email",
+        "value": "",
+        "required": "false"
+    },
+    {
+        "type": "submit",
+        "name": "save"
+    }
+]
