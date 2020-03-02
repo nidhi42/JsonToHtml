@@ -3,23 +3,40 @@
         "type": "text",
         "name": "username",
         "value": "",
-        "required": "true"
-
+        "required": "true",
+        "controlName": "input"
     },
     {
         "type": "password",
         "name": "password",
         "value": "",
-        "required": "true"
+        "required": "true",
+        "controlName": "input"
     },
     {
         "type": "text",
         "name": "email",
         "value": "",
-        "required": "false"
+        "required": "false",
+        "controlName": "input"
+    },
+
+    {
+        "type": "text",
+        "name": "description",
+        "controlName": "textarea"
+    },
+    {
+        "type": "select",
+        "name": "Select one option",
+        "controlName": "select",
+        "options": ["Jane Eyre","Pride and Prejudice","Wuthering Heights"]
     },
     {
         "type": "submit",
-        "name": "save"
+        "name": "save",
+        "controlName": "button"
+
     }
+
 ]
