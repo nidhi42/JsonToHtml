@@ -1,32 +1,27 @@
-<div class="login-page">
-    <form novalidate>
+<div class="login-page container">
+    <form novalidate class="page-form">
     <div *ngFor="let i of arrLogin">
-
-        <!-- <div *ngIf="(i.type === 'password' || i.type === 'text') && i.controlName !== 'textarea'"> -->
-            <div *ngIf="i.controlName !== 'textarea' && i.controlName !== 'button' && i.controlName !== 'select'">
+            <div *ngIf="i.controlName !== 'textarea' && i.controlName !== 'button' && i.controlName !== 'select'" class="form-group">
             <label>{{i.name}}</label>
-            <input type="{{i.type}}" name="{{i.name}}"   required="{{i.required}}"  [(ngModel)]="i.value">
+            <input type="{{i.type}}" class="form-control" name="{{i.name}}" required="{{i.required}}"  [(ngModel)]="i.value">
             <p class="error" *ngIf="showError">{{i.name}} is required</p>
         </div>
-
-        <div *ngIf="i.controlName === 'textarea'">
+        <div *ngIf="i.controlName === 'textarea'" class="form-group">
             <label>{{i.name}}</label>
-                <textarea></textarea>
+                <textarea  class="form-control"></textarea>
             <p class="error" *ngIf="showError">{{i.name}} is required</p>
         </div>
-        <div *ngIf="i.controlName === 'select'">
+        <div *ngIf="i.controlName === 'select'" class="form-group">
             <label>{{i.name}}</label>
-            <select *ngFor="let form_elem of form_template">
+            <select *ngFor="let form_elem of form_template"  class="form-control">
                 <option *ngFor="let opt of form_elem.options">
                   {{opt}}
                 </option>
               </select>
             <p class="error" *ngIf="showError">{{i.name}} is required</p>
         </div>
-
-
         <div *ngIf="i.type === 'submit'">
-            <button type="{{i.type}}" (click)="onSubmit()">{{i.name}}</button>
+            <button class="btn btn-primary" type="{{i.type}}" (click)="onSubmit()">{{i.name}}</button>
         </div>
     </div>
     </form>
